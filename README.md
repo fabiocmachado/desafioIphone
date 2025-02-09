@@ -1,0 +1,32 @@
+## Diagrama UML do iPhone
+
+```mermaid
+classDiagram
+    <<interface>> ReprodutorMusical {
+        +tocar()
+        +pausar()
+        +selecionarMusica(musica: String)
+    }
+    
+    <<interface>> AparelhoTelefonico {
+        +ligar(numero: String)
+        +atender()
+        +iniciarCorreioVoz()
+    }
+    
+    <<interface>> NavegadorInternet {
+        +exibirPagina(url: String)
+        +adicionarNovaAba()
+        +atualizarPagina()
+    }
+    
+    class iPhone {
+        -musicaAtual: String
+        -tocando: boolean
+        -emChamada: boolean
+        -paginaAtual: String
+    }
+    
+    iPhone ..|> ReprodutorMusical
+    iPhone ..|> AparelhoTelefonico
+    iPhone ..|> NavegadorInternet
